@@ -32,11 +32,15 @@
     <div class="row">
       <div class="text-justify ">
         <h1>Results for Pitch Practice</h1>
+        <h6>Amount correct over time</h6>
+      <canvas id="line" class="large-4 columns"></canvas>
+      <h6>Notes missed over time</h6>
+      <canvas id="histogram" class="large-4 columns"></canvas>
 
-      <canvas id="canvas" class="large-12 columns"></canvas>
       <script src="chart.js"></script>
+
       <script>
-        var ctx = document.getElementById("canvas").getContext("2d");
+        var ctx = document.getElementById("line").getContext("2d");
         var data = {
           labels: ["4/7/15", "4/20/15", "5/5/15", "5/10/15", "5/31/15", "6/4/15", "6/13/14"],
           datasets: [
@@ -64,6 +68,36 @@
               ]
           };
         var myLineChart = new Chart(ctx).Line(data, {});
+
+
+        var ctx = document.getElementById("histogram").getContext("2d");
+        var data = {
+          labels: ["A","B Flat","B","C","C Sharp","D","E Flat","E","F","F Sharp","G","G Sharp"],
+          datasets: [
+                {
+                  label: "Notes correct for song",
+                  fillColor: "rgba(220,220,220,0.2)",
+                  strokeColor: "rgba(220,220,220,1)",
+                  pointColor: "rgba(220,220,220,1)",
+                  pointStrokeColor: "#fff",
+                  pointHighlightFill: "#fff",
+                  pointHighlightStroke: "rgba(220,220,220,1)",
+                  data: [5,9,5,4,10,5,9,4,5,10,6,8]
+                }
+                // ,
+                // {
+                //   label: "My Second dataset",
+                //   fillColor: "rgba(151,187,205,0.2)",
+                //   strokeColor: "rgba(151,187,205,1)",
+                //   pointColor: "rgba(151,187,205,1)",
+                //   pointStrokeColor: "#fff",
+                //   pointHighlightFill: "#fff",
+                //   pointHighlightStroke: "rgba(151,187,205,1)",
+                //   data: [28, 48, 40, 19, 86, 27, 90]
+                // }
+              ]
+          };
+        var myHistogram = new Chart(ctx).Bar(data, {});
       </script>
       </div>
     </div>
@@ -84,7 +118,7 @@
         <div>
           <h4>
           <strong>Notes missed:</strong>
-          3
+          4
           </h4>
           <br>
         </div>
