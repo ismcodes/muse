@@ -6,7 +6,7 @@ var canvas = $(".vexflow canvas")[i];
     Vex.Flow.Renderer.Backends.CANVAS);
 
   var ctx = renderer.getContext();
-  var stave = new Vex.Flow.Stave(10, 0, 200);
+  var stave = new Vex.Flow.Stave(10, 0, 250);
   stave.addClef("treble").setContext(ctx).draw();
 
   // Create the notes
@@ -23,6 +23,7 @@ var canvas = $(".vexflow canvas")[i];
 
     // A C-Major chord.
     new Vex.Flow.StaveNote({ keys: ["c/4", "e/4", "g/4"], duration: "q" })
+
   ];
 
   // Create a voice in 4/4
@@ -35,9 +36,9 @@ var canvas = $(".vexflow canvas")[i];
   // Add notes to voice
   voice.addTickables(notes);
 
-  // Format and justify the notes to 500 pixels
+  // Format and justify the notes to 250 pixels
   var formatter = new Vex.Flow.Formatter().
-    joinVoices([voice]).format([voice], 200);
+    joinVoices([voice]).format([voice], 250);
 
   // Render voice
   voice.draw(ctx, stave);

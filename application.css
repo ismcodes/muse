@@ -10,3 +10,12 @@ img {
   margin-top: 10px;
   margin-bottom: 10px;
 }
+.name a{
+  font-family: "Pinyon Script", Arial;
+  color: #fff;
+  margin-left: 15px;
+  font-size: 2em;
+}
+.record {
+  color: red;
+}
