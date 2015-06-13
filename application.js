@@ -7,7 +7,12 @@ var canvas = $(".vexflow canvas")[i];
 
   var ctx = renderer.getContext();
   var stave = new Vex.Flow.Stave(10, 0, 250);
-  stave.addClef("treble").setContext(ctx).draw();
+  if (i == 0) {
+	  stave.addClef("treble").setContext(ctx).draw();
+  }
+	else{
+		stave.setContext(ctx).draw();
+	};
 
   // Create the notes
   var notes = [
