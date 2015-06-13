@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="application.css" />
     <link rel="stylesheet" href="framework.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Pinyon+Script' rel='stylesheet' type='text/css'>
 
 
 
@@ -23,11 +24,30 @@
   </head>
   <body>
     <header>
-      <nav class="tab-bar">
-        <div class="left-small">
-          <a href="#idOfLeftMenu" role="button" aria-controls="idOfLeftMenu" aria-expanded="false" class="left-off-canvas-toggle menu-icon" ><span></span></a>
+      <nav class="top-bar" data-topbar>
+        <div class="row">
+          <ul class="title-area">
+            <li>
+              <h1 class="name">
+                <a href="index.html">
+                  Muse
+                </a>
+              </h1>
+            </li>
+            <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
+          </ul>
+
+          <section class="top-bar-section">
+            <ul class="left">
+              <li><a href="index.html"><i class="fa fa-play"></i> Listen</a></li>
+              <li><a href="#"><i class="fa fa-circle record"></i> Record</a></li>
+              <li class="active"><a href="results.html"><i class="fa fa-line-chart"></i> Metrics</a></li>
+            </ul>
+
+          </section>
         </div>
       </nav>
+
     </header>
     <div class="row">
       <div class="text-justify ">
