@@ -10,7 +10,7 @@
 
     <link rel="stylesheet" href="application.css" />
     <link rel="stylesheet" href="framework.css" />
-    <link rel="stylesheet" href="fontawesome.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
 
 
@@ -26,17 +26,61 @@
       <nav class="tab-bar">
         <div class="left-small">
           <a href="#idOfLeftMenu" role="button" aria-controls="idOfLeftMenu" aria-expanded="false" class="left-off-canvas-toggle menu-icon" ><span></span></a>
-
         </div>
       </nav>
     </header>
     <div class="row">
+      <div class="text-justify ">
+        <h1>Results for Pitch Practice</h1>
+
+      <canvas id="canvas" class="large-12 columns"></canvas>
+      <script src="chart.js"></script>
+      <script>
+        var ctx = document.getElementById("canvas").getContext("2d");
+        var data = {
+          labels: ["4/7/15", "4/20/15", "5/5/15", "5/10/15", "5/31/15", "6/4/15", "6/13/14"],
+          datasets: [
+                {
+                  label: "Notes correct for song",
+                  fillColor: "rgba(220,220,220,0.2)",
+                  strokeColor: "rgba(220,220,220,1)",
+                  pointColor: "rgba(220,220,220,1)",
+                  pointStrokeColor: "#fff",
+                  pointHighlightFill: "#fff",
+                  pointHighlightStroke: "rgba(220,220,220,1)",
+                  data: [55, 55, 56, 57, 59, 62, 66]
+                }
+                // ,
+                // {
+                //   label: "My Second dataset",
+                //   fillColor: "rgba(151,187,205,0.2)",
+                //   strokeColor: "rgba(151,187,205,1)",
+                //   pointColor: "rgba(151,187,205,1)",
+                //   pointStrokeColor: "#fff",
+                //   pointHighlightFill: "#fff",
+                //   pointHighlightStroke: "rgba(151,187,205,1)",
+                //   data: [28, 48, 40, 19, 86, 27, 90]
+                // }
+              ]
+          };
+        var myLineChart = new Chart(ctx).Line(data, {});
+      </script>
+      </div>
+    </div>
+
+    <div class="row">
+
       <div class="text-justify">
-        <h1>Results for tempo practice</h1>
-        <img src="http://placekitten.com/g/200/301">
-        <blockquote>
-          Red notes are notes you played that do not match up with the sheet music.
-        </blockquote>
+
+        <div class="large-6 columns">
+          <img src="http://placekitten.com/g/200/301">
+          <blockquote>
+            Red notes are notes you played that do not match up with the sheet music.
+          </blockquote>
+        </div>
+        <div class="large-6 columns">
+
+
         <div>
           <h4>
           <strong>Notes missed:</strong>
@@ -56,7 +100,7 @@
         <div>
           <h4>
           <strong>How you've changed since the first time:</strong>
-          8 more notes correct
+          11 more notes correct
           </h4>
           <br>
         </div>
@@ -68,7 +112,7 @@
           </h4>
           <br>
         </div>
-
+      </div>
       </div>
     <div>
   </body>
