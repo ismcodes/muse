@@ -22,3 +22,9 @@ img {
 .record {
   color: red;
 }
+.graph {
+  height: 900;
+}
+td {
+  font-size: 20pt;
+}
