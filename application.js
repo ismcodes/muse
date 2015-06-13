@@ -8,8 +8,8 @@ var canvas = $(".vexflow canvas")[i];
   var ctx = renderer.getContext();
   var stave = new Vex.Flow.Stave(10, 0, 250);
   if (i == 0) {
-	  stave.addClef("treble").setContext(ctx).draw();
-  }
+		stave.addClef("treble").setContext(ctx).draw();
+	}
 	else{
 		stave.setContext(ctx).draw();
 	};
