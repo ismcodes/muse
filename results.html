@@ -52,11 +52,10 @@
     <div class="row">
       <div class="text-justify ">
         <h1>Results for Pitch Practice</h1>
-        <h6>Amount correct over time</h6>
-      <canvas id="line" class="large-4 columns"></canvas>
+        <h6>Amount correct/percent asssessed correctly over time</h6>
+      <canvas id="line" class="large-6 columns"></canvas>
       <h6>Notes missed over time</h6>
-      <canvas id="histogram" class="large-4 columns"></canvas>
-
+      <canvas id="histogram" class="large-6 columns"></canvas>
       <script src="chart.js"></script>
 
       <script>
@@ -74,24 +73,24 @@
                   pointHighlightStroke: "rgba(220,220,220,1)",
                   data: [55, 55, 56, 57, 59, 62, 66]
                 }
-                // ,
-                // {
-                //   label: "My Second dataset",
-                //   fillColor: "rgba(151,187,205,0.2)",
-                //   strokeColor: "rgba(151,187,205,1)",
-                //   pointColor: "rgba(151,187,205,1)",
-                //   pointStrokeColor: "#fff",
-                //   pointHighlightFill: "#fff",
-                //   pointHighlightStroke: "rgba(151,187,205,1)",
-                //   data: [28, 48, 40, 19, 86, 27, 90]
-                // }
+                ,
+                {
+                  label: "Notes marked correctly",
+                  fillColor: "rgba(151,187,205,0.2)",
+                  strokeColor: "rgba(151,187,205,1)",
+                  pointColor: "rgba(151,187,205,1)",
+                  pointStrokeColor: "#fff",
+                  pointHighlightFill: "#fff",
+                  pointHighlightStroke: "rgba(151,187,205,1)",
+                  data: [Math.round(100*(80-55-10)/(80-55)), Math.round(100*(80-55-9)/(80-55)), Math.round(100*(80-56-8)/(80-56)), Math.round(100*(80-57-8)/(80-57)), Math.round(100*(80-59-6)/(80-59)), Math.round(100*(80-62-4)/(80-62)), Math.round(100*(80-66-3)/(80-66))]
+                }
               ]
           };
         var myLineChart = new Chart(ctx).Line(data, {});
 
 
-        var ctx = document.getElementById("histogram").getContext("2d");
-        var data = {
+        ctx = document.getElementById("histogram").getContext("2d");
+        data = {
           labels: ["A","B Flat","B","C","C Sharp","D","E Flat","E","F","F Sharp","G","G Sharp"],
           datasets: [
                 {
@@ -145,8 +144,8 @@
 
         <div>
           <h4>
-          <strong>Percentage correct:</strong>
-          ADD THIS IN LATER
+          <strong>Percentage assessed correctly:</strong>
+          79
           </h4>
           <br>
         </div>
@@ -162,7 +161,7 @@
         <div>
           <h4>
           <strong>How you've changed since the last time:</strong>
-          1 less note correct
+          4 more notes correct
           </h4>
           <br>
         </div>
